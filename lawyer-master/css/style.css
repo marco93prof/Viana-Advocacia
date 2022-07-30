@@ -725,6 +725,10 @@ h3 {
   padding: 0 50px;
 }
 
+.header-area .logo-img img{
+  width: 175px;
+}
+
 @media (max-width: 767px) {
   /* line 9, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_header.scss */
   .header-area .main-header-area {
