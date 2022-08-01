@@ -723,6 +723,12 @@ h3 {
 /* line 9, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_header.scss */
 .header-area .main-header-area {
   padding: 0 50px;
+  height: 105px;
+}
+
+/* NEW */
+.header-area .logo-img img {
+  width: 200px;
 }
 
 @media (max-width: 767px) {
@@ -795,7 +801,7 @@ h3 {
 /* line 46, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a {
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: capitalize;
   font-weight: 400;
   display: inline-block;
@@ -1849,6 +1855,11 @@ h3 {
 /* line 150, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_footer.scss */
 .footer .footer_logo {
   margin-bottom: 43px;
+}
+
+/* NEW */
+.footer .footer_logo img {
+  width: 175px;
 }
 
 @media (max-width: 767px) {
