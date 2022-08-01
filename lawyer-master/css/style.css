@@ -1419,10 +1419,14 @@ h3 {
 
 /* line 31, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_loyers.scss */
 .our_loyers .single_loyers span {
+  /* NEW */
+  /* width: 550px;
+  margin-top: 65px;
+  text-indent: 1em;
+   */
   font-size: 16px;
   color: #727272;
   display: block;
-  margin-bottom: 18px;
 }
 
 /* line 39, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_loyers.scss */
