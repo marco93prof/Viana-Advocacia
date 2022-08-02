@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900|Poppins:100,100i,200i,300,400,500,500i,600,600i,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900|Poppins:100,100i,200i,300,400,500,500i,600,600i,700&display=swap");
+
+/* RESPOSIVE SIZES */
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
+
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_extend.scss */
 .flex-center-start {
   display: -webkit-box;
@@ -13,12 +21,10 @@
   justify-content: start;
 }
 
-/* Normal desktop :1200px. */
-/* Normal desktop :992px. */
-/* Tablet desktop :768px. */
-/* small mobile :320px. */
-/* Large Mobile :480px. */
-/* 1. Theme default css */
+html {
+  scroll-behavior: smooth;
+}
+
 /* line 4, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/theme-default.scss */
 body {
   font-family: "Poppins", sans-serif;
@@ -1042,16 +1048,8 @@ h3 {
 
 .slider_area_logo {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* Normal desktop :1200px. */
 }
-/* Normal desktop :1200px. */
-/* Normal desktop :992px. */
-/* Tablet desktop :768px. */
-/* small mobile :320px. */
-/* Large Mobile :480px. */
-/* 1. Theme default css */
-
-
 
 @media (max-width: 767px) {
   /* line 7, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
