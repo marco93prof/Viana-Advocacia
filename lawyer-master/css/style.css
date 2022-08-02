@@ -582,6 +582,11 @@ h3 {
   margin-bottom: 60px;
 }
 
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 767px) {
   /* line 4, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slick-nav.scss */
   .mobile_menu {
@@ -722,7 +727,7 @@ h3 {
 
 /* line 9, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_header.scss */
 .header-area .main-header-area {
-  padding: 0 50px;
+  padding: 1px 50px;
 }
 
 @media (max-width: 767px) {
@@ -1028,8 +1033,11 @@ h3 {
 
 /* line 7, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_slider.scss */
 .slider_area {
+  box-sizing: border-box;
   padding: 0 50px;
   background: #000;
+  text-align: center;
+  /* border-top: 5px solid grey; */
 }
 
 @media (max-width: 767px) {
