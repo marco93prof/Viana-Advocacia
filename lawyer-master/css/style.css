@@ -728,7 +728,7 @@ h3 {
   top: 0;
   background: transparent;
   z-index: 999;
-  background: #000;
+  background: #111; 
 }
 
 /* line 9, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_header.scss */
@@ -955,7 +955,7 @@ h3 {
   transition: transform 500ms ease, background 500ms ease;
   -webkit-transition: transform 500ms ease, background 500ms ease;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
-  background: #000;
+  background: #111;
 }
 
 @media (max-width: 767px) {
@@ -1043,7 +1043,6 @@ h3 {
   padding: 0 50px;
   background: #000;
   text-align: center;
-  /* border-top: 5px solid grey; */
 }
 
 .slider_area_logo {
@@ -1209,6 +1208,19 @@ h3 {
   padding-left: 45.5px;
 }
 
+/* NEW */
+.practice_list {
+  color: #ccc;
+}
+
+/* NEW */
+@media (max-width: 400px) {
+  .single_practice {
+    font-size: 0.8em;
+  }
+}
+
+
 @media (max-width: 767px) {
   /* line 1, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_practice.scss */
   .practice_area {
@@ -1357,8 +1369,9 @@ h3 {
   color: #F2C64D;
   font-size: 16px;
   font-weight: 400;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0.5;
+  /* visibility: hidden; */
+  visibility: visible;
 }
 
 /* line 96, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_practice.scss */
@@ -1417,6 +1430,10 @@ h3 {
 /* line 20, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_loyers.scss */
 .our_loyers .single_loyers .thumb img {
   width: 100%;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* line 24, C:/Users/SPN Graphics/Desktop/CL September/211 Lawyer/HTML/scss/_loyers.scss */
