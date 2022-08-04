@@ -101,7 +101,8 @@
                         </div>
                         <div class="practice_hover text-center">
                             <div class="hover_inner">
-                                <i class="flaticon-courthouse"></i>
+                                <!-- <i class="flaticon-courthouse"></i> -->
+                                <i><img class="icon_practice" src="./img/contrato_icon.png" alt="contrato_icon"></i>
                                 <h3 class="practice_title">Cível</h3>
                                 <ul class="practice_list">
                                     <li>Direitos reais</li>
@@ -111,9 +112,16 @@
                                     <li>Direito das obrigações e contratos</li>
                                     <li>Responsabilidade civil</li>
                                     <br>
-                                    <li><a class="lern_more" href="./documents/acao_indenizatoria.pdf" target="blank">Exemplo de Ação Indenizatória</a></li>
+                                    <li>
+                                        <span id="btn1_practice" class="lern_more">Peças</span>
+                                        <div id="modal1_practice" class="w3modal">
+                                            <div class="w3modal_content">
+                                                <span id="modalclose1_practice" class="w3modal_close">&times;</span>
+                                                <a class="lern_more" href="./documents/acao_indenizatoria.pdf" target="blank">Ação Indenizatória</a>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
-                                <!-- <a href="#" class="lern_more">Learn More</a> -->
                             </div>
                         </div>
                     </div>
@@ -131,6 +139,16 @@
                                 <ul class="practice_list">
                                     <li>Direito individual do trabalho</li>
                                     <li>Direito coletivo do trabalho</li>
+                                    <br>
+                                    <li>
+                                        <span id="btn2_practice" class="lern_more">Peças</span>
+                                        <div id="modal2_practice" class="w3modal">
+                                            <div class="w3modal_content">
+                                                <span id="modalclose2_practice" class="w3modal_close">&times;</span>
+                                                <a href="" target="blank">-</a>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                                 <!-- <a href="#" class="lern_more">Learn More</a> -->
                             </div>
@@ -147,7 +165,16 @@
                                 <i class="flaticon-balance"></i>
                                 <h3 class="practice_title">Consumidor</h3>
                                 <ul class="practice_list">
-                                    <li>Peças</li>
+                                    <br>
+                                    <li>
+                                        <span id="btn3_practice" class="lern_more">Peças</span>
+                                        <div id="modal3_practice" class="w3modal">
+                                            <div class="w3modal_content">
+                                                <span id="modalclose3_practice" class="w3modal_close">&times;</span>
+                                                <a href="" target="blank">-</a>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                                 <!-- <a href="#" class="lern_more">Learn More</a> -->
                             </div>
@@ -289,6 +316,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 
 
     <!-- JS here -->
+    <script src="js/w3modal.js"></script>
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/popper.min.js"></script>
