@@ -20,10 +20,21 @@ if( isset($_POST['email']) && !empty($_POST['email']) ) {
 			  "X=Mailer:PHP/".phpversion();
 
 	if( mail($to,$subject,$body,$header,"-f$from") ){
-		echo("Mensagem enviada com sucesso!");
+		?>
+		<div class="alert alert-success" role="alert">Mensagem enviada com sucesso!</div>
+		<?php
 	}
 	else{
-		echo("Falha ao enviar mensagem!");
+		?>
+		<div class="alert alert-danger" role="alert">Falha ao enviar mensagem!</div>
+		<?php
 	}
+
+	// if( mail($to,$subject,$body,$header,"-f$from") ){
+	// 	echo("Mensagem enviada com sucesso!");
+	// }
+	// else{
+	// 	echo("Falha ao enviar mensagem!");
+	// }
 }
 ?>
