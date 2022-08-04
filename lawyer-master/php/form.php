@@ -8,16 +8,18 @@ if( isset($_POST['email']) && !empty($_POST['email']) ) {
 	$mensagem = addslashes($_POST['message']);
 
 	$to = "contato@vianadacruz.com.br";
+	$from = "formulario@vianadacruz.com.br";
+
 	$subject = "Contato - Site Viana";
 	$body = "Nome: ".$nome."\r\n".
 	        "Email: ".$email."\r\n".
 			  "Telefone: ".$telefone."\r\n".
 			  "Mensagem: ".$mensagem;	
-	$header = "From:formulario@vianadacruz.com.br"."\r\n".
+	$header = "From:".$from."\r\n".
 			  "Reply-To:".$email."\r\n".
 			  "X=Mailer:PHP/".phpversion();
- 
-	if( mail($to,$subject,$body,$header) ){
+
+	if( mail($to,$subject,$body,$header,"-f$from") ){
 		echo("Mensagem enviada com sucesso!");
 	}
 	else{
