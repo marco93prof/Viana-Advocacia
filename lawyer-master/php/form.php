@@ -13,7 +13,7 @@ if( isset($_POST['email']) && !empty($_POST['email']) ) {
 	        "Email: ".$email."\r\n".
 			  "Telefone: ".$telefone."\r\n".
 			  "Mensagem: ".$mensagem;	
-	$header = "From:EMAIL"."\r\n".
+	$header = "From:formulario@vianadacruz.com.br"."\r\n".
 			  "Reply-To:".$email."\r\n".
 			  "X=Mailer:PHP/".phpversion();
  
