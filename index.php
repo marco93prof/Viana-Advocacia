@@ -102,15 +102,16 @@
                         <div class="practice_hover text-center">
                             <div class="hover_inner">
                                 <!-- <i class="flaticon-courthouse"></i> -->
-                                <i><img class="icon_practice" src="./img/contrato_icon.png" alt="contrato_icon"></i>
+                                <i class="icon_practice"><img class="icon_practice" src="./img/contrato_icon.png" alt="contrato_icon"></i>
                                 <h3 class="practice_title">Cível</h3>
-                                <ul class="practice_list">
+                                <ul class="practice_list small">
                                     <li>Direitos reais</li>
                                     <li>Direito de família</li>
                                     <li>Direito das pessoas</li>
+                                    <li>Responsabilidade civil</li>
                                     <li>Inventários e Testamentos</li>
                                     <li>Direito das obrigações e contratos</li>
-                                    <li>Responsabilidade civil</li>
+
                                     <br>
                                     <li>
                                         <span id="btn1_practice" class="lern_more">Peças</span>
@@ -193,6 +194,11 @@
                                 <i class="flaticon-courthouse"></i>
                                 <h3 class="practice_title">Administrativo</h3>
                                 <ul class="practice_list">
+
+                                    <li> Defesa de Servidores </li>
+                                    <li> Concursos </li> 
+                                    <li> Licitações </li> 
+
                                     <br>
                                     <li>
                                         <span id="btn3_practice" class="lern_more">Peças</span>
@@ -251,13 +257,11 @@
                         <img class="thumb" src="./img/selfie_Viana.gif" alt="selfie_viana">
                         <!-- <h3>Henry Miller</h3> -->
                         <!-- <span>Family Lawyer</span> -->
-                        <!-- <div class="social_links">
-                            <ul>
-                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
-                            </ul>
-                        </div> -->
+                        <div class="">
+                            <p><br/>
+                                <a href=" http://lattes.cnpq.br/8476367831308459" target="_blank"> Currículo Lattes </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-8 col-md-6 col-lg-8">
@@ -265,6 +269,7 @@
                         <p class="text-justify">
                             <H1>André Viana da Cruz</H1>
                             <h3>OAB/PR 19.177</h3>
+                            
                             <p>Cursou Direito na Universidade Estadual de Ponta Grossa, de 1987 a 1991. Advoga desde 1992 na cidade de Cascavel-PR, onde desenvolve trabalho multidisciplinar e personalizado, com destaque para Direito Civil, Direito do Trabalho, Direito das Relações de Consumo e Direito Administrativo em defesa de servidores públicos. Na atuação sempre assume pessoalmente todas as etapas da advocacia, do atendimento ao cliente até o acompanhamento em instâncias superiores, passando pela elaboração das peças, trâmites em cartórios/secretarias, reuniões em gabinetes (quando urgente e necessário), audiências e realização de provas técnicas. Essa prática possibilitou conhecer minuciosamente as dificuldades de quem ocupa uma posição firme na defesa de direitos e de prerrogativas profissionais.</p>
                             <p>Paralelo à prática da advocacia, percorreu também carreira acadêmica. Em 2001, ingressou no magistério superior, lecionando Direito Civil na UNIVEL. Em 2007 assumiu a coordenação do Curso de Direito da Faculdade de Telêmaco Borba (FATEB), ministrando as disciplinas Direito Processual Civil e Propriedade Intelectual. De 2008 a 2011 foi assessor jurídico do Ministério Público do Estado do Paraná, no Centro de Apoio das Promotorias de Direitos Constitucionais. Na mesma época, ministrou aulas de Direito Civil em cursos de especialização da Fundação Escola do Ministério Público do Paraná – FEMPAR e no Curso de Direito da Faculdade de Pinhais – FAPI. Atualmente é professor de Direito Empresarial e Direitos Humanos no ISULPAR. </p>
                             <p>Em 1999 concluiu Especialização em Novas Tendências do Direito Contemporâneo, da UEPG, com monografia sobre responsabilidade civil nas relações de consumo. Em 2006 concluiu mestrado em Direito Cooperativo e Cidadania, do Programa de Pós-Graduação em Direito da UFPR (PPGD/UFPR), com dissertação sobre cooperativismo na proteção de bens culturais. Em 2012 ingressou no doutorado em Direito das Relações Sociais, também do PPGD/UFPR, apresentando, em 2016, a tese “Identidade Cultural como Elemento Determinante para Titulação de Terras Quilombolas”. De 2016 a 2018 realizou pós-doutorado e integrou o corpo docente do Programa de Pós-Graduação em Direito Agrário da Universidade Federal de Goiás, ofertando a disciplina Posse e Propriedade da Terra no Cerrado e produzindo artigos no tema da pesquisa.</p>
@@ -303,24 +308,24 @@
                         $email = addslashes($_POST['email']);
                         $telefone = addslashes($_POST['phone']);
                         $mensagem = addslashes($_POST['message']);
-                        // $to = "contato@vianadacruz.com.br";
-                        $to = "marcocrante@gmail.com";
+                        $to = "contato@vianadacruz.com.br";
                         $from = "formulario@vianadacruz.com.br";
-                        $subject = "Contato - Site Viana";
+
+                        $subject = "Contato - Site André Viana da Cruz ";
                         $body = "- Nome: ".$nome."\r\n".
                                 "- Email: ".$email."\r\n".
                                 "- Telefone: ".$telefone."\r\n".
                                 "\r\n- Mensagem: ".$mensagem;	
+
                         $header = "From:".$from."\r\n".
                                 "Reply-To:".$email."\r\n".
                                 "X=Mailer:PHP/".phpversion();
-                        if( mail($to,$subject,$body,$header,"-f$from") ){
+
+                        if( mail($to, $subject, $body, $header,"-f$from") ){
                             echo '<div class="alert alert-success text-center" role="alert">Mensagem enviada com sucesso!</div>';
-                            // echo '<script>alert("Mensagem enviada com sucesso!");</script>';
                         }
                         else{
                             echo '<div class="alert alert-danger text-center" role="alert">Falha ao enviar mensagem!</div>';
-                            // echo '<script>alert("Falha ao enviar mensagem!");</script>';
                         }
                         // header("location: http://vianadacruz.com.br/index.php#nav3");
                     }
