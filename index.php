@@ -28,6 +28,9 @@
 </head>
 
 <body>
+    
+    <?php include("php/contact_process.php") ?>
+
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -259,7 +262,7 @@
                         <!-- <span>Family Lawyer</span> -->
                         <div class="">
                             <p><br/>
-                                <a href=" http://lattes.cnpq.br/8476367831308459" target="_blank"> Currículo Lattes </a>
+                                <a href="https://lattes.cnpq.br/8476367831308459" target="_blank"> Currículo Lattes </a>
                             </p>
                         </div>
                     </div>
@@ -288,48 +291,33 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-60">
                         <h3>Contato</h3>
-                        <!-- <p>Subtitulo.</p> -->
                     </div>
                 </div>
             </div>
             <div class="center_form">
                 <!-- <form method="post" action="./php/form.php"> -->
                 <!-- <form method="post" action="./index.php"> -->
-                <form method="post" action="http://vianadacruz.com.br/index.php#nav3">
-                    <input type="text" name="name" placeholder="Nome" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="phone" placeholder="Telefone">
+                <!-- <form method="post" action="https://vianadacruz.com.br/index.php#nav3"> -->
+                <form method="post">
+                    <input type="text" name="name" placeholder="Nome"  required>
+                    <input type="email" name="email" placeholder="Email"  required>
+                    <input type="text" name="phone" placeholder="Telefone"  >
                     <textarea name="message" placeholder="Mensagem" required></textarea>
-                    <button class="boxed-btn5" type="submit" >Enviar</button>
+                    <button class="boxed-btn5" type="submit" name="submit" id="submit">Enviar</button>
                 </form>
-                <?php
-                    if( isset($_POST['email']) && !empty($_POST['email']) ) {
-                        $nome = addslashes($_POST['name']);
-                        $email = addslashes($_POST['email']);
-                        $telefone = addslashes($_POST['phone']);
-                        $mensagem = addslashes($_POST['message']);
-                        $to = "contato@vianadacruz.com.br";
-                        $from = "formulario@vianadacruz.com.br";
+                
+                <?php if ($sent != NULL) { ?>
+                    <div class="alert alert-success text-center" role="alert"> Mensagem enviada com sucesso! </div> 
+   
+                <?php } ?>
 
-                        $subject = "Contato - Site André Viana da Cruz ";
-                        $body = "- Nome: ".$nome."\r\n".
-                                "- Email: ".$email."\r\n".
-                                "- Telefone: ".$telefone."\r\n".
-                                "\r\n- Mensagem: ".$mensagem;	
+                <?php if ($error != NULL) { ?>
+                    <div class="alert alert-danger text-center" role="alert"> Falha ao enviar mensagem! </div>
+                <?php } ?>
 
-                        $header = "From:".$from."\r\n".
-                                "Reply-To:".$email."\r\n".
-                                "X=Mailer:PHP/".phpversion();
+                
+            
 
-                        if( mail($to, $subject, $body, $header,"-f$from") ){
-                            echo '<div class="alert alert-success text-center" role="alert">Mensagem enviada com sucesso!</div>';
-                        }
-                        else{
-                            echo '<div class="alert alert-danger text-center" role="alert">Falha ao enviar mensagem!</div>';
-                        }
-                        // header("location: http://vianadacruz.com.br/index.php#nav3");
-                    }
-                ?>
             </div>
         </div>
     </div>
@@ -354,9 +342,18 @@
                             <p class="footer_text">Rua Souza Naves - 3983
                                 <br>Centro Comercial Lince - Sala 503
                                 <br>Cascavel - PR
-                                <br>(45) 9971 - 5073
-                                <br><a class="domain" href="#nav3">andrevianadacruz@hotmail.com</a>
+                                <br>(45) 9 9971-5073
+                                <br><a class="domain" href="#nav3">contato@vianadacruz.com.br</a>
                             </p>
+
+                            <!--- Secure Site Seal - DO NOT EDIT --->
+                                <span id="ss_img_wrapper_115-55_image_en">
+                                    <a href="http://www.alphassl.com/ssl-certificates/wildcard-ssl.html" target="_blank" title="SSL Certificates">
+                                        <img alt="Wildcard SSL Certificates" id="ss_img" src="//seal.alphassl.com/SiteSeal/images/alpha_noscript_115-55_en.gif" title="SSL Certificate">
+                                    </a>
+                                    </span>
+                                <script type="text/javascript" src="//seal.alphassl.com/SiteSeal/alpha_image_115-55_en.js"></script>
+                                <!--- Secure Site Seal - DO NOT EDIT --->
                         </div>
                     </div>
                 </div>
@@ -369,7 +366,7 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados | Este template foi feito com <i class="fa fa-heart-o" aria-hidden="true"></i> pela <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>

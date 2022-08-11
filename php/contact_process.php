@@ -1,37 +1,48 @@
 <?php
 
-    $to = "spn8@spondonit.com";
-    $from = $_REQUEST['email'];
-    $name = $_REQUEST['name'];
-    $subject = $_REQUEST['subject'];
-    $number = $_REQUEST['number'];
-    $cmessage = $_REQUEST['message'];
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\SMTP;
+	use PHPMailer\PHPMailer\Exception;
 
-    $headers = "From: $from";
-	$headers = "From: " . $from . "\r\n";
-	$headers .= "Reply-To: ". $from . "\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	//Load Composer's autoloader
+	require 'vendor/autoload.php';
 
-    $subject = "You have a message from your Bitmap Photography.";
+	if (isset($_POST['submit']))  {
+		$mailer = new PHPMailer(true);
+		$mailer->setLanguage('br');                             // Habilita as saídas de erro em Português
+		$mailer->CharSet='UTF-8'; 
+		$mailer->IsSMTP();
+		// $mailer->SMTPDebug = 1;
+		$mailer->Port = 587; //Indica a porta de conexão 
+		$mailer->Host = 'email-ssl.com.br';//Endereço do Host do SMTP 
+		$mailer->SMTPAuth = true; //define se haverá ou não autenticação 
+		$mailer->SMTPSecure = 'tls'; 
+		$mailer->Username = 'formulario@vianadacruz.com.br'; //Login de autenticação do SMTP
+		$mailer->Password = 'A4^^utBr!93*'; //Senha de autenticação do SMTP
+		$mailer->FromName = 'Contato do site'; //Nome que será exibido
+		$mailer->From = 'formulario@vianadacruz.com.br'; //Obrigatório ser a mesma caixa postal configurada no remetente do SMTP
 
-    $logo = 'img/logo.png';
-    $link = '#';
+		$mailer->AddAddress('contato@vianadacruz.com.br','Contato Site André Viana da Cruz');
+		$mailer->isHTML(true); 
+		
+		$nome = addslashes($_POST['name']);
+		$email = addslashes($_POST['email']);
+		$telefone = addslashes($_POST['phone']);
+		$mensagem = addslashes($_POST['message']);
 
-	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
-	$body .= "<table style='width: 100%;'>";
-	$body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
-	$body .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
-	$body .= "</td></tr></thead><tbody><tr>";
-	$body .= "<td style='border:none;'><strong>Name:</strong> {$name}</td>";
-	$body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
-	$body .= "</tr>";
-	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$csubject}</td></tr>";
-	$body .= "<tr><td></td></tr>";
-	$body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
-	$body .= "</tbody></table>";
-	$body .= "</body></html>";
-
-    $send = mail($to, $subject, $body, $headers);
-
+		$mailer->Subject = "Contato Site André Viana da Cruz";
+		$mailer->MsgHTML("<b> Nome: </b> ".$nome."<br> </br>".
+						"<b> Email: </b>".$email."<br> </br>".
+						"<b> Telefone: </b>".$telefone.
+						"<p><b> Mensagem: </b>".$mensagem."</p>"	
+	);
+	
+		
+		if($mailer->Send()){
+			$sent = "OK";
+		}
+		else{
+			$error = "Error";
+		}
+	} 
 ?>
